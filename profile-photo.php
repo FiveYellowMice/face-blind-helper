@@ -17,6 +17,8 @@ $query = $db->query("SELECT file_content FROM profile_photos WHERE id = $id");
 
 $result = $query->fetchArray(SQLITE3_ASSOC);
 
+$db->close();
+
 if (!$result) {
   http_response_code(404);
   die();
